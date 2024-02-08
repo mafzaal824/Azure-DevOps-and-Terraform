@@ -11,10 +11,19 @@ terraform {
 provider "azurerm" {
   features {}
 }
+
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg_afzaal_poc"
+    storage_account_name = "sandboxtfstorage01"
+    container_name       = "containerinstance"
+    key                  = "terraform.tfstate"
+  }
+}
 ########################### Data ##############################
 
 data "azurerm_resource_group" "rg" {
-  name = "afzaal-temp"
+  name = "rg_afzaal_poc"
 }
 
 ########################### Variables ##############################
