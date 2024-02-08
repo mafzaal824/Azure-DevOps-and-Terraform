@@ -46,7 +46,7 @@ resource "azurerm_container_group" "tfcg_test" {
 
   container {
     name   = "weatherapi"
-    image  = "binarythistle/weatherapi:${var.imagebuild}"
+    image  = "mafzaal824/weatherapi:${var.imagebuild}"
     cpu    = "1"
     memory = "1"
 
